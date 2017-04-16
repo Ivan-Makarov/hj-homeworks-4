@@ -6,9 +6,11 @@ const cartTotal = cart.querySelector('#cart-total-price');
 const cartCount = cart.querySelector('#cart-count');
 
 function addItems() {
-    let currentTotal = parseInt(cartTotal.innerHTML);
+    let totalUnformat = cartTotal.innerHTML.replace(/\s/g, '');
+    let currentTotal = parseInt(totalUnformat);
     let addedPrice = parseInt(this.dataset.price);
-    cartTotal.innerHTML = currentTotal + addedPrice;
+    currentTotal += addedPrice;
+    cartTotal.innerHTML = getPriceFormatted(currentTotal);
 
     let currentAmount = parseInt(cartCount.innerHTML);
     cartCount.innerHTML = currentAmount + 1;
