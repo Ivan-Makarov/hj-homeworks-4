@@ -10,6 +10,4 @@ contacts.forEach(contact => {
     contactsHTML += itemHTML;
 })
 
-console.log(contactsHTML);
-
 contactList.innerHTML = contactsHTML;
